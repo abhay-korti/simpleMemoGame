@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './Components/index.css';
+import App from './Components/App.js';
 
 ReactDOM.render(
   <React.StrictMode>
+    <h1 className='header'>Memory Game</h1>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
@@ -14,4 +14,3 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

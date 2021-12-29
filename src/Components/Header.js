@@ -9,7 +9,9 @@ export function Header() {
             </div>
             <div className='line'>
                 <div className='layer1'>
-                    <div className='layer2'></div>
+                    <div className='layer2'>
+                        <div className='layer3'></div>
+                    </div>
                 </div>
             </div>
         </div>

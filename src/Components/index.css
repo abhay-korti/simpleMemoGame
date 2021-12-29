@@ -125,8 +125,13 @@ code {
   column-gap: 128px;
 }
 
-.test-pos{
+.align-pos{
 align-self: flex-start;
 text-align: center;
 margin-bottom: 32px;
+}
+
+.img-container{
+  width: 150px;
+  height: 150px;
 }

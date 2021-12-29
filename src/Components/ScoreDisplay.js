@@ -5,11 +5,11 @@ export default function Score(props) {
 
 
     return (
-        <div className="test-pos">
-            <div className='center poke-font'>
+        <div className="align-pos center score-display">
+            <div className='poke-font'>
                 Score
             </div>
-            <div className="center poke-font">
+            <div className="poke-font">
                 {props.score}
             </div>
         </div>

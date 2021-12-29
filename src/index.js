@@ -5,7 +5,6 @@ import App from './Components/App.js';
 
 ReactDOM.render(
   <React.StrictMode>
-    <h1 className='header'>Memory Game</h1>
     <App />
   </React.StrictMode>,
   document.getElementById('root')

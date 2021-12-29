@@ -1,23 +1,14 @@
-import './App.css';
 import React, { useState, useEffect } from 'react';
 import Pokemon from './Pokemon';
+import Score from './ScoreDisplay';
+import { Header } from './Header';
+import { reSeedArr } from './ReSeedComps/Seed';
+import { Strikes } from './Strikes';
 import './index.css'
 
 function App() {
-  /* 
-  
-     --Header-- 
-  --Score    Display-- 
 
-  Comp Comp Comp Comp 
-  Comp Comp Comp Comp 
-  Comp Comp Comp Comp 
-  Comp Comp Comp Comp 
-  Comp Comp Comp Comp 
-
-  */
   const [pokeObj, setPokeObj] = useState([]);
-  const [clickedPoke, setClickedPoke] = useState([]);
   const [strikes, setStrikes] = useState(0);
   const [score, setScore] = useState(0);
 
@@ -65,37 +56,8 @@ function App() {
     }
     setData();
 
-    // async function fetchPokeData() {
-    //   console.log('Comp Mounting');
-    //   let linkArr = [];
-    //   let copyArr = pokeObj;
-    //   for (let i = 0; i < pokeObj.length; i++) {
-    //     const pokeP = await fetch(`${pokeObj[i].url}`);
-    //     const pokeJSON = await pokeP.json();
-    //     console.log('Requesting Data')
-    //     linkArr.push(await pokeJSON.sprites.front_default);
-    //   }
-    //   for (let j = 0; j < linkArr.length; j++) {
-    //     copyArr[j].url = await linkArr[j];
-    //     console.log(await copyArr[j]);
-    //   }
-    //   console.log(copyArr);
-    //   setPokeObj(copyArr);
-    //   console.log(pokeObj);
-    // }
-    // fetchPokeData();
   }, [])
 
-  function reSeedArr(len = 5) {
-    const arr = [];
-    while (arr.length < len) {
-      const randomNumber = parseInt(Math.random() * 20);
-      if (!arr.includes(randomNumber)) {
-        arr.push(randomNumber)
-      }
-    }
-    return arr;
-  }
 
   function reArrangeArr() {
     const seedArr = reSeedArr(pokeObj.length);
@@ -109,6 +71,16 @@ function App() {
     return localCopyArr
   }
 
+
+  function boardReset() {
+    let copyArr = pokeObj;
+    for (let i = 0; i < pokeObj.length; i++) {
+      copyArr[i].beenClicked = false;
+    }
+    setPokeObj(copyArr);
+    setStrikes(0);
+    setScore(0);
+  }
 
   function passedOnClick(name) {
     console.log(name);
@@ -126,6 +98,7 @@ function App() {
           }
           else {
             alert('Game Over!');
+            boardReset();
           }
         }
         setPokeObj(copyArr);
@@ -136,20 +109,22 @@ function App() {
   }
 
   return (
-    <div className='center-donny'>
-      <div className="App">
-        {//Component must be used to handle API Request and assigning them to the Box objs, which contain the sprites, name, beenClicked and event listener
-          pokeObj.map((poke) => {
-            return (
-              <div>
-                <Pokemon obj={poke} funcSetBeenClicked={passedOnClick} />
-              </div>
-            )
-          })
-        }
-      </div>
-      <div>
-        Scores = {score}
+    <div>
+      <Header />
+      <div className='center main-controller'>
+        <Strikes strikes={strikes} />
+        <div className="App">
+          {//Component must be used to handle API Request and assigning them to the Box objs, which contain the sprites, name, beenClicked and event listener
+            pokeObj.map((poke) => {
+              return (
+                <div>
+                  <Pokemon obj={poke} funcSetBeenClicked={passedOnClick} />
+                </div>
+              )
+            })
+          }
+        </div>
+        <Score score={score} />
       </div>
     </div>
   );

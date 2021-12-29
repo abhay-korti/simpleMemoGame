@@ -11,10 +11,7 @@ export default function Pokemon(props) {
             <div>
                 <img src={`${props.obj.url}`} alt={props.obj.name} />
             </div>
-            <div>
-                {props.obj.index}
-            </div>
-            <div>
+            <div className='text-change'>
                 {props.obj.name.toUpperCase()}
             </div>
         </div>

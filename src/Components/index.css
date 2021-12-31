@@ -93,7 +93,7 @@ code {
   flex-flow: column nowrap;
   width: 200px;
   height: 150px;
-  background: rgba(158, 99, 99, 0.8);
+  background: rgba(158, 99, 99, 0.1);
   text-align: center;
   border: 1px solid white;
   border-radius: 10%;

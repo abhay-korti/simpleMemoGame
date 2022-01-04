@@ -4,6 +4,7 @@ import Score from './ScoreDisplay';
 import { Header } from './Header';
 import { reSeedArr } from './ReSeedComps/Seed';
 import { Strikes } from './Strikes';
+import RulesModal from './Modal';
 import './index.css'
 
 function App() {
@@ -110,6 +111,7 @@ function App() {
 
   return (
     <div>
+      <RulesModal />
       <Header />
       <div className='center main-controller'>
         <Strikes strikes={strikes} />
@@ -126,6 +128,7 @@ function App() {
         </div>
         <Score score={score} />
       </div>
+
     </div>
   );
 }

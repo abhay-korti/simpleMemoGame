@@ -5,7 +5,7 @@ import { Header } from './Header';
 import { reSeedArr } from './ReSeedComps/Seed';
 import { Strikes } from './Strikes';
 import RulesModal from './Modal';
-import './index.css'
+import './styles.scss';
 
 function App() {
 
@@ -15,37 +15,11 @@ function App() {
 
   useEffect(() => {
     console.log('Mounting Comps');
-    // function setData() {
-    //   for (let i = 0; i < 20; i++) {
-    //     const test = fetch(`https://pokeapi.co/api/v2/pokemon`)
-    //       .then(response => {
-    //         return response.json()
-    //       }).then(reqJSON => {
-    //         let reqObj = {};
-    //         reqObj = (reqJSON.results[i]);
-    //         setPokeObj(pokeObj.push({ index: i + 1, name: reqObj.names, url: reqObj.url, beenClicked: false }))
-    //         console.log(pokeObj);
-    //         return fetch(reqObj.url)
-    //       }).then(resp => {
-    //         return resp.json()
-    //       }).then(
-    //         (r) => {
-    //           console.log(r)
-    //         }
-    //       )
-    //   }
-    // }
     async function setData() {
       let tempArr = [];
       const req = await fetch(`https://pokeapi.co/api/v2/pokemon`);
       console.log('Fetching 1')
       const reqObj = await req.json();
-      // setPokeObj(
-      //   reqObj.results.map(
-      //     (items, index) => {
-      //       return { index: index + 1, name: items.name, url: items.url, beenClicked: false }
-      //     }
-      //   ));
       for (let i = 0; i < reqObj.results.length; i++) {
         const newReq = await fetch(reqObj.results[i].url);
         console.log('Fetching 2')
@@ -58,7 +32,6 @@ function App() {
     setData();
 
   }, [])
-
 
   function reArrangeArr() {
     const seedArr = reSeedArr(pokeObj.length);

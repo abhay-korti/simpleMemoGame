@@ -4,7 +4,29 @@
 }
 
 $modal-color: rgba(233, 192, 192,0.95);
+$lower-backgroundcolor: rgb(228, 228, 70);
+$text-color: rgb(0,0,0);
+$clikcObj-container:rgba(221, 220, 220,0.3);
 
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    background: $lower-backgroundcolor;
+    color: $text-color;
+  }
+  
+@font-face {font-family: "Pokemon"; src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot"); src: url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.woff") format("woff"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f4d1593471d222ddebd973210265762a.svg#Pokemon") format("svg"); }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
 
 .open-modal-container{
     position: absolute;
@@ -16,8 +38,7 @@ $modal-color: rgba(233, 192, 192,0.95);
      justify-content: center;
      align-items:center ;
      z-index: 1;
-     
-     
+         
 }
 
 .open-modal{
@@ -32,7 +53,7 @@ $modal-color: rgba(233, 192, 192,0.95);
     left:37%;
     top:20%;
     flex-flow: column nowrap;
-    border: 1px solid red;
+    border: 2px solid black;
     border-radius: 10%;
     z-index: 2;
 
@@ -44,6 +65,7 @@ $modal-color: rgba(233, 192, 192,0.95);
     .modal-text{
         margin: 16px;
         font-size:4vh;
+        font-weight: 300;
     }
 
     hr{
@@ -53,9 +75,159 @@ $modal-color: rgba(233, 192, 192,0.95);
     }
 
     button{
-        padding:32px;
+        padding:16px;
+        font-size:2vh ;
     }
 }
 
 
+.header{
+  color: $text-color;
+  background: rgb(238, 64, 64);
+  width: 100%;
+  height: 3em;
+}
 
+.line{
+  background:black;
+  height: 20px;
+  width: 100%;
+  display:flex;
+  justify-content:center ;
+  align-items: center;
+}
+
+.layer1{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  border: 6px solid #333333;
+  background:white; 
+  border-radius: 50%;
+}
+
+.layer2{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border: 4px solid #333333;
+  background:white;
+  border-radius: 50%;
+}
+
+.layer3{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 10px;
+  width: 10px;
+  border: 1px solid #333333;
+  background:black ;
+  border-radius: 50%;
+}
+
+
+.lower-margin{
+  margin-bottom:32px;
+}
+
+
+.App{
+  width: 900px;
+  height: 840px;
+  display:flex;
+  flex-flow: row wrap;
+  background:$clikcObj-container;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12px;
+  border-radius: 2% ;
+}
+
+
+.clikcObj{
+  display:flex;
+  flex-flow: column nowrap;
+  width: 200px;
+  height: 150px;
+  background: rgba(158, 99, 99, 0.1);
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 10%;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  transition: transform 1s;
+
+}
+
+.clikcObj:hover{
+  transform: scale(1.1);
+}
+
+.center{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+}
+
+.text-change{
+  font-family:"Nunito", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: $text-color;
+
+}
+
+.score-display{
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  row-gap:32px ;
+}
+
+
+.poke-font{
+  font-size:64px;
+  font-family: 'Pokemon';
+}
+
+.main-controller{
+  column-gap: 128px;
+}
+
+.align-pos{
+align-self: flex-start;
+text-align: center;
+margin-bottom: 32px;
+}
+
+.img-container{
+  width: 150px;
+  height: 150px;
+}
+
+// .clikcObj-animation{
+//     animation: fade-out 0.5s backwards;
+// }
+
+// @keyframes fade-out {
+//     0%{
+//         transform: scale(1);
+//         opacity: 1;
+//     }
+//     25%{
+//         transform: scale(0.8);
+//         opacity: 0.9;
+//     }
+//     50%{
+//         transform: scale(0.6);
+//         opacity: 0.8;
+//     }
+//     100%{
+//         transform: scale(0.4);
+//         opacity: 0.7;
+//     }
+// }

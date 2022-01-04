@@ -5,6 +5,11 @@ import './index.css'
 
 export default function RulesModal() {
 
+    function removingModal(event) {
+        console.log(event.target.parentElement.parentElement.style.display = 'none');
+    }
+
+
     return (
         <div className="open-modal-container">
             <div className="open-modal">
@@ -14,7 +19,7 @@ export default function RulesModal() {
                     Get points for choosing a card, but don't click on the same card more than once!</div>
                 <div className="modal-text">Cards Shuffle around so try your best to get all of the unique cards available to you!</div>
 
-                <button></button>
+                <button onClick={removingModal}>Got it!</button>
             </div>
         </div>
     )

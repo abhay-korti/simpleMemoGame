@@ -7,7 +7,7 @@ Built with -
 3. <a href="https://pokeapi.co/">PokeAPI</a>
 
 ## Try it
-Live Demo - 
+<a href="https://abhay-korti.github.io/simpleMemoGame/">Live Demo</a>
 
 ## Setting up
 To run the file yourselves - 

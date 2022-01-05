@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/simpleMemoGame/static/css/main.6b993d3e.css",
-    "main.js": "/simpleMemoGame/static/js/main.c567d3ca.js",
+    "main.css": "/simpleMemoGame/static/css/main.20893008.css",
+    "main.js": "/simpleMemoGame/static/js/main.494f1af7.js",
     "index.html": "/simpleMemoGame/index.html",
-    "main.6b993d3e.css.map": "/simpleMemoGame/static/css/main.6b993d3e.css.map",
-    "main.c567d3ca.js.map": "/simpleMemoGame/static/js/main.c567d3ca.js.map"
+    "main.20893008.css.map": "/simpleMemoGame/static/css/main.20893008.css.map",
+    "main.494f1af7.js.map": "/simpleMemoGame/static/js/main.494f1af7.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b993d3e.css",
-    "static/js/main.c567d3ca.js"
+    "static/css/main.20893008.css",
+    "static/js/main.494f1af7.js"
   ]
 }
